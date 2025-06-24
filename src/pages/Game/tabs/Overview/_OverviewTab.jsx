@@ -3,6 +3,7 @@ import GameInfo from './GameInfo'
 import VideoCard from '../../../../components/VideoCard'
 import PossessionCard from './PossessionCard'
 import LeagueArticles from './LeagueArticles'
+import GameArticle from './GameArticle'
 
 const OverviewTab = ({ game }) => {
 
@@ -24,7 +25,7 @@ const OverviewTab = ({ game }) => {
     }
 
     return (
-        <div className='flex flex-col gap-4 '>
+        <div className='flex flex-col gap-4 md:px-0 px-1'>
 
             {
                 game.videos?.length > 0 &&

@@ -5,7 +5,7 @@ import { sortRoster } from '../../../../utils/game'
 import Field from './Field'
 import Roster from './Roster'
 
-const LineupsTab = ({game}) => {
+const LineupsTab = ({ game }) => {
     const roster = "roster" in game.rosters[0] && "roster" in game.rosters[1]
     const formation = "formation" in game.rosters[0] ? game.rosters[0].formation : false
     const homeLogo = getLogo(game.header.competitions[0].competitors[0].team, 25)
@@ -17,7 +17,7 @@ const LineupsTab = ({game}) => {
     const homeFormation = game.rosters[0].formation
     const awayFormation = game.rosters[1].formation
 
-    console.log(game.rosters);
+
 
     useEffect(() => {
 
@@ -27,7 +27,7 @@ const LineupsTab = ({game}) => {
     }, [])
 
 
-  return (
+    return (
         <>
             {/* 
             {
@@ -36,7 +36,7 @@ const LineupsTab = ({game}) => {
             } */}
 
 
-            <div className=' overflow-x-auto  px-1 md:px-0'>
+            <div className=' overflow-x-auto md:px-0 px-1'>
 
                 {/* <div className='flex flex-row justify-center items-center w-full'>
                     <button
@@ -45,54 +45,57 @@ const LineupsTab = ({game}) => {
                 </div> */}
 
                 {
-                    roster && formation &&
-                    <Field
-                        game={game}
-                        homeLogo={homeLogo}
-                        awayLogo={awayLogo}
-                        homeFormation={homeFormation}
-                        awayFormation={awayFormation}
-                        invertField={invertField}
-                        setInvertField={setInvertField}
-                    />
+                    roster && formation ?
+                        <Field
+                            game={game}
+                            homeLogo={homeLogo}
+                            awayLogo={awayLogo}
+                            homeFormation={homeFormation}
+                            awayFormation={awayFormation}
+                            invertField={invertField}
+                            setInvertField={setInvertField}
+                        />
+                        : <></>
                 }
 
                 {
-                    // roster && formation &&
-                    // <div className='w-full flex flex-rrow justify-center'>
-                    //     <button
-                    //         className={`font-semibold text-xs bg-[--tw-color-800]  border-transparent border-[1px] rounded mt-3 p-2 md:hover:border-[--tw-primary] transition-all ${showStats ? "bg-[--tw-primary] text-black " : ""}`}
-                    //         onClick={() => setShowStats(!showStats)}
-                    //     >Estadísticas del jugador</button>
-                    // </div>
+                    // roster && formation ?
+                    //     <div className='w-full flex flex-rrow justify-center'>
+                    //         <button
+                    //             className={`font-semibold text-xs bg-slate-800 cursor-pointer border-transparent border-[1px] rounded mt-3 p-2 md:hover:border-lime-400 transition-all ${showStats ? "bg-lime-400 text-black " : "bg-slate-800 text-white"}`}
+                    //             onClick={() => { setShowStats(!showStats) }}
+                    //         >Estadísticas del jugador</button>
+                    //     </div>
+                    //     : <></>
                 }
 
 
                 {
-                    roster &&
-                    <div
-                        style={{ minWidth: windowWidth < 800 ? (windowWidth * 2) : "auto" }}
-                        className='grid grid-cols-2 gap-3 mt-3'
-                    >
-                        <Roster
-                            roster={sortRoster(game.rosters[!invertField ? 0 : 1].roster)}
-                            logo={!invertField ? homeLogo : awayLogo}
-                            showStats={showStats}
+                    roster ?
+                        <div
+                            style={{ minWidth: windowWidth < 800 ? (windowWidth * 2) : "auto" }}
+                            className='grid grid-cols-2 gap-3 mt-3'
+                        >
+                            <Roster
+                                roster={sortRoster(game.rosters[!invertField ? 0 : 1].roster)}
+                                logo={!invertField ? homeLogo : awayLogo}
+                                showStats={showStats}
 
-                        />
-                        <Roster
-                            roster={sortRoster(game.rosters[invertField ? 0 : 1].roster)}
-                            logo={!invertField ? awayLogo : homeLogo}
-                            showStats={showStats}
-                        />
-                    </div>
+                            />
+                            <Roster
+                                roster={sortRoster(game.rosters[invertField ? 0 : 1].roster)}
+                                logo={!invertField ? awayLogo : homeLogo}
+                                showStats={showStats}
+                            />
+                        </div>
+                        : <></>
                 }
 
 
             </div>
 
         </>
-  )
+    )
 }
 
 export default LineupsTab

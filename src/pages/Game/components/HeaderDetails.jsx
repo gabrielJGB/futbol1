@@ -1,4 +1,5 @@
 import React from 'react'
+import { getDetailImg } from '@/utils/images'
 
 const HeaderDetails = ({details, homeId, awayId}) => {
   return (
@@ -14,7 +15,7 @@ const HeaderDetails = ({details, homeId, awayId}) => {
 
               <div className='w-[43%] flex flex-row justify-center items-center gap-1  border-b-2  border-slate-700'>
 
-                {/* <Image src={getDetailImg(detail)} alt="img" width={10} height={10}/> */}
+                <img src={getDetailImg(detail)} alt="img" width={10} height={10}/>
 
                 <div className='max-w-[100%] text-center  text-[11px] text-gray-300'>
                   {"participants" in detail ?

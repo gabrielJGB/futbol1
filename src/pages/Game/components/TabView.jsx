@@ -8,10 +8,11 @@ import ShootoutTab from '../tabs/Shootout/_ShootoutTab'
 import StatsTab from '../tabs/Stats/_StatsTab'
 import VideosTab from '../tabs/Videos/_VideosTab'
 
+
 const TabView = ({ game }) => {
 
-  const getSelected = () => {    
-    
+  const getSelected = () => {
+
     switch (selectedTab.value) {
       case 0:
         return <div className='block md:hidden'><OverviewTab game={game} /></div>
@@ -29,14 +30,16 @@ const TabView = ({ game }) => {
         return <PositionsTab game={game} />
       case 7:
         return <VideosTab game={game} />
+      default:
+        return <></>
     }
 
   }
 
 
   return (
-    <div className='md:mx-0  mt-2 mb-10'>
-      { getSelected() }
+    <div className='md:mx-0 mt-2 mb-10'>
+      {getSelected()}
     </div>
   )
 }

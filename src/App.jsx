@@ -12,6 +12,7 @@ import ArticlePage from './pages/Article/index.jsx';
 import VideoPage from './pages/Video/index.jsx';
 import SearchPage from './pages/Search/index.jsx';
 
+
 const App = () => {
   return (
     <LocationProvider>

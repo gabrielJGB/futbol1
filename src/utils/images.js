@@ -1,3 +1,17 @@
+
+import penalty from '@/assets/penalty.png'
+import penaltyMissed from '@/assets/no-score.png'
+import arrowIn from '@/assets/arrow-in.png'
+import arrowOut from '@/assets/arrow-out.png'
+import ownGoal from '@/assets/own-goal.png'
+import goal from '@/assets/goal.png'
+
+import boot from '@/assets/boot.png'
+import redCard from '@/assets/red.png'
+import yellowCard from '@/assets/yellow.png'
+
+
+
 export const getFlag = (slug, SIZE) => {
 
     const flagCode = slug.slice(0, 3)
@@ -49,4 +63,52 @@ export const getLogo = (team_p, SIZE) => {
         return undefined
     }
     return undefined
+}
+
+
+export const getPlayImg = (play, subbedOut) => {
+
+
+
+    if (play.penaltyKick)
+        if (play.didScore)
+            return penalty
+        else
+            return penaltyMissed
+    else if (play.ownGoal)
+        return ownGoal
+    else if (play.didScore)
+        return goal
+    else if (play.didAssist)
+        return boot
+    else if (play.redCard)
+        return redCard
+    else if (play.yellowCard)
+        return yellowCard
+
+    else if (play.substitution)
+        if (subbedOut)
+            return arrowOut
+        else
+            return arrowIn
+
+    else
+        return ""
+    // else if (play.substitution)
+    //     return p_in ? <Icon source={"chevron-right"} size={22} color='lime' /> : <Icon source={"chevron-left"} size={22} color='red' />
+
+
+}
+
+
+export const getDetailImg = (detail) => {
+
+    if (detail.penaltyKick)
+        return penalty
+    else if (detail.redCard)
+        return redCard
+    else if (detail.scoringPlay)
+        return goal
+    else
+        return ""
 }

@@ -226,3 +226,147 @@ export const formatStat = (stat) => {
 
 
 }
+
+export const getEventColor = (id) => {
+
+    switch (id) {
+        case '94':
+            return "#ECF900"
+
+        case '93':
+            return "#E60200"
+        case '138':
+        case '98':
+        case '137':
+        case '70':
+        case '173':
+        case '97':
+            return "#00E903"
+
+        default:
+            return "#FFFFFF"
+
+    }
+}
+
+
+export const translateEventText = (text) => {
+
+    switch (text) {
+        case "Goal - Free-kick":
+            return "Gol de tiro libre"
+
+        case "Gol, anotación":
+            return "Gol"
+        case "Tiro a la meta":
+            return "Tiro al arco"
+        case "Balón mano":
+            return "Mano"
+        case "Fuera de lugar":
+            return "Fuera de juego"
+        case "Penal - Anotado":
+            return "Penal convertido"
+        case "Shot Hit Woodwork":
+            return "Tiro en el travesáneo"
+        case "Goal - Volley":
+            return "Gol de volea"
+        case "Penalty - Saved":
+            return "Penal atajado"
+        case "Penal -Errado":
+            return "Penal fallado"
+        case "VAR - Referee decision cancelled":
+            return "El VAR anuló la desición del árbitro"
+        case "Start 2nd Half Extra Time":
+            return "Inicio del segundo tiempo extra"
+        case "Start Extra Time":
+            return "Inicio del tiempo extra"
+        case "End Extra Time":
+            return "Final del tiempo extra"
+        case "Start Shootout":
+            return "Inicio de la tanda de penales"
+        case "Throw in":
+            return "Saque lateral"
+        default:
+            return text
+    }
+
+}
+
+
+
+export const translateStatLabel = (label) => {
+
+    switch (label) {
+        case "Fouls":
+            return "Faltas"
+        case "Corner Kicks":
+            return "Tiros de esquina"
+        case "Possession":
+            return "Posesión"
+        case "POSSESSION":
+            return "% Posesión"
+        case "Fuera de Lugar":
+            return "Fuera de Juego"
+        case "Salvadas":
+            return "Atajadas"
+        case "TIROS":
+            return "Tiros totales"
+        case "SHOTS":
+            return "Tiros totales"
+        case "ON GOAL":
+            return "Tiros al arco"
+        case "A GOL":
+            return "Tiros al arco"
+        case "On Target %":
+            return "% Tiros al arco"
+        case "% al arco":
+            return "Tiros"
+        case "Penalty Goals":
+            return "Goles de penal"
+        case "Penalty Kicks Taken":
+            return "Penales atajados"
+        case "Accurate Passes":
+            return "Pases precisos"
+        case "Passes":
+            return "Pases"
+        case "Pass Completion %":
+            return "% Pases completados"
+        case "Accurate Crosses":
+            return "Centros precisos"
+
+        case "Cross %":
+            return "% Centros"
+        case "Crosses":
+            return "Centros"
+        case "Tackles":
+            return "Barridas"
+        case "Tackle %":
+            return "% Barridas"
+
+        case "Effective Tackles":
+            return "Barridas efectivas"
+
+        case "Blocked Shots":
+            return "Tiros bloqueados"
+        case "Long Balls %":
+            return "% Pases aereos"
+        case "Accurate Long Balls":
+            return "Pases aereos precisos"
+
+        case "Long Balls":
+            return "Pases arereos"
+
+        case "Clearances":
+            return "Despejes"
+        case "Effective Clearances":
+            return "Despejes efectivos"
+
+        case "Interceptions":
+            return "Intercepciones"
+
+
+        default:
+            return label
+    }
+
+}

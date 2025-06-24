@@ -17,7 +17,7 @@ const TabBar = ({ tabs }) => {
 
 
   return (
-    <div className='z-20 top-0 sticky md:relative flex flex-row self-start mb-2 md:shadow shadow-slate-900 md:shadow-gray-900 md:overflow-hidden overflow-x-scroll w-full mx-auto rounded-none md:rounded bg-slate-800 md:bg-slate-800 text-xs font-bold  '>
+    <div className='z-20 top-0 sticky md:relative flex flex-row self-start mb-2 md:shadow shadow-slate-900 md:shadow-gray-900 md:overflow-hidden overflow-x-scroll w-full mx-auto rounded-none md:rounded bg-slate-800 md:bg-slate-800 text-xs font-bold  border-b-[1px] border-slate-900'>
 
       <button
         className={`flex cursor-pointer md:hidden active:bg-slate-900 hover:text-white transition-all md:px-4 px-4 md:py-3 py-4 border-b-[3px] ${selectedTab.value === 0 ? "border-lime-400" : "border-transparent"} transition-all duration-200`}

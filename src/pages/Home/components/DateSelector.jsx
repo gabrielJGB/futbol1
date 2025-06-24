@@ -9,7 +9,7 @@ const DateSelector = () => {
     const { selectedDate, previousDate, nextDate } = getDates(params.date);
 
     return (
-        <div className='flex flex-row justify-between items-center  w-full shadow-none  md:shadow  md:shadow-slate-900 bg-slate-800 text-xs text-center font-bold md:rounded md:mt-10 md:w-[40%] mx-auto'>
+        <div className='flex flex-row justify-between items-center  w-full shadow-none  md:shadow  md:shadow-slate-900 bg-slate-800 text-xs text-center font-bold md:rounded  mx-auto'>
 
             <Link href={`/${previousDate.string}`} className='active:text-white w-full  py-3 text-gray-400 cursor-pointer md:hover:text-white'>
                 {previousDate.formated}

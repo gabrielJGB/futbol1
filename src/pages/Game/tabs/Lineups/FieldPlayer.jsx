@@ -1,6 +1,7 @@
 import arrowOut from '../../../../assets/arrow-out.png'
 import arrowIn from '../../../../assets/arrow-in.png'
 import { Link } from "preact-router"
+import { getPlayImg } from '@/utils/images'
 
 
 const IMG_SIZE = 8
@@ -52,7 +53,7 @@ const FieldPlayer = ({ player, color, isThisBoca, plays, subbedOutFor }) => {
                     plays.filter((x) => x.scoringPlay).map((play, i) => (
 
                         <div key={i} >
-                            {/* <Image src={getPlayImg(play, false)} style={{ width: 12, height: 12 }} alt="play" /> */}
+                            <img src={getPlayImg(play, false)} style={{ width: 12, height: 12 }} alt="play" />
                         </div>
                     ))
                 }
@@ -80,17 +81,17 @@ const FieldPlayer = ({ player, color, isThisBoca, plays, subbedOutFor }) => {
                 className='flex flex-col gap-0 justify-center items-center text-xs md:text-sm text-center max-w-[100px] font-bold'
             >
                 <div className='flex flex-row items-center gap-[2px] '>
-                    {/* {
+                    {
                         subbedOutFor &&
-                        <Image src={arrowOut} width={IMG_SIZE} height={IMG_SIZE} alt="arrow" />
-                    } */}
+                        <img src={arrowOut} width={IMG_SIZE} height={IMG_SIZE} alt="arrow" />
+                    }
                     <div style={{ color: getColor(plays, subbedOutFor) }}>{playerName}</div>
                 </div>
 
                 {
                     subbedOutFor &&
                     <div className='flex flex-row items-center gap-[1px]'>
-                        {/* <Image src={arrowIn} width={IMG_SIZE} height={IMG_SIZE} alt="arrow" /> */}
+                        <img src={arrowIn} width={IMG_SIZE} height={IMG_SIZE} alt="arrow" />
                         <div className='flex flex-row items-center gap-1 text-[10px]'>
 
                             <div
@@ -100,7 +101,7 @@ const FieldPlayer = ({ player, color, isThisBoca, plays, subbedOutFor }) => {
                                 {subbedOutFor.jersey}
                             </div>
 
-                            <div className='md:text-[12px] text-[9px]'>{getName(subbedOutFor.athlete.displayName)}</div>
+                            <div className='md:text-[12px] text-[9px] text-white'>{getName(subbedOutFor.athlete.displayName)}</div>
                         </div>
                     </div>
                 }

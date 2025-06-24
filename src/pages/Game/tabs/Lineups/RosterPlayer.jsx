@@ -2,7 +2,11 @@
 // import { formatStat, getPlayerColor, getPlayImg } from '@/utils/game'
 // import ball from '@/assets/ball_64x64.png'
 import { Link } from 'preact-router'
-import { formatStat, getPlayerColor } from '../../../../utils/game'
+import { formatStat, getPlayerColor } from '@/utils/game'
+import arrowOut from '@/assets/arrow-out.png'
+import arrowIn from '@/assets/arrow-in.png'
+
+import { getPlayImg } from '@/utils/images'
 
 
 
@@ -37,7 +41,7 @@ const RosterPlayer = ({ player, showStats }) => {
                     player.plays.map((play, i) => (
                         <div key={i} className='flex flex-row gap-[3px] items-center '>
 
-                            {/* <Image src={getPlayImg(play, player.subbedOut)} alt="play" width={13} height={13} /> */}
+                            <img src={getPlayImg(play, player.subbedOut)} alt="play" width={13} height={13} />
                             <div className='text-gray-400 font-extrabold text-[11px]'>{play.clock.displayValue}</div>
 
                         </div>
@@ -51,7 +55,7 @@ const RosterPlayer = ({ player, showStats }) => {
             {
                 "subbedInFor" in player && showStats &&
                 <div className='flex flex-row gap-1 items-center text-xs my-2'>
-                    <Image src={arrowOut} alt="play" width={12} height={12} />
+                    <img src={arrowOut} alt="play" width={12} height={12} />
                     <div className='w-[24px] py-[1px] bg-slate-950 border-[1px] border-slate-700 rounded text-center font-semibold'>
                         {player.subbedInFor.jersey}
                     </div>
@@ -65,7 +69,7 @@ const RosterPlayer = ({ player, showStats }) => {
                 "subbedOutFor" in player && showStats &&
                 <div className='flex flex-row gap-1 items-center text-xs my-2'>
 
-                    {/* <Image src={arrowIn} alt="play" width={12} height={12} /> */}
+                    <img src={arrowIn} alt="play" width={12} height={12} />
                     <div className='w-[24px] py-[1px] bg-slate-950 border-[1px] border-slate-700 rounded text-center font-semibold'>
                         {player.subbedOutFor.jersey}
                     </div>
