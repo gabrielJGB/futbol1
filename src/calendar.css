@@ -177,6 +177,10 @@
 @media screen and (max-width:800px) {
   .react-calendar{
     opacity: 97%;
+      border-top-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
   }
 
   .calendar-container {

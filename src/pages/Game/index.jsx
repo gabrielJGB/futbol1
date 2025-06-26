@@ -15,35 +15,42 @@ const GamePage = () => {
     const { query, path } = useLocation()
 
 
-    if (error) return <p className=''>Ha ocurrido un error</p>;
-    if (loading) return <div>Cargando...</div>
+    if (error) return <p className='text-center'>Ha ocurrido un error</p>;
+    if (loading) return <div className='text-center w-full pt-4'>Cargando informacion del partido...</div>
 
     useEffect(() => {
-        if (window.innerWidth > 700)
-            selectedTab.value = 1
 
-        if (query.tab != undefined)
-            selectedTab.value = parseInt(query.tab)
-            
-
-}, [])
+        // selectedTab.value=2
 
 
-return (
-    <div className=' mx-0 md:mx-10 my-0 md:my-6 flex md:flex-row flex-col gap-0 md:gap-6 transition-all'>
+        // if (query.tab != undefined) {
+        //     selectedTab.value = parseInt(query.tab)
+        // } else {
+        //     if (window.innerWidth > 768) {
+        //         selectedTab.value = 1
+        //     } else {
+        //         selectedTab.value = 0
+        //     }
+        // }
 
-        <div className='z-20 relative w-full md:w-[35%]'>
-            <Header game={game} />
+    }, [path])
+
+
+    return (
+        <div className='w-full mx-0 md:mx-0 my-0 md:my-0 flex md:flex-row flex-col gap-0 md:gap-6 transition-all'>
+
+            <div className='z-20 relative md:w-1/3 w-full'>
+                <Header game={game} />
+            </div>
+
+            <div className='z-20 relative top-0 md:w-2/3 w-full  '>
+
+                <TabBar tabs={getTabs(game)} />
+                <TabView game={game} />
+            </div>
+
         </div>
-
-        <div className='z-20 relative top-0 w-full md:w-[65%] '>
-
-            <TabBar tabs={getTabs(game)} />
-            <TabView game={game} />
-        </div>
-
-    </div>
-)
+    )
 }
 
 export default GamePage

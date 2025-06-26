@@ -1,4 +1,4 @@
-import { LocationProvider, Router, Route, ErrorBoundary,  } from 'preact-iso';
+import { LocationProvider, Router, Route, ErrorBoundary, } from 'preact-iso';
 
 import NotFound from './pages/_404.jsx';
 import HomePage from './pages/Home/index.jsx';
@@ -11,6 +11,7 @@ import PlayerPage from './pages/Player/index.jsx';
 import ArticlePage from './pages/Article/index.jsx';
 import VideoPage from './pages/Video/index.jsx';
 import SearchPage from './pages/Search/index.jsx';
+import Menu from './components/Menu.jsx';
 
 
 const App = () => {
@@ -19,11 +20,14 @@ const App = () => {
       <ErrorBoundary onError={e => console.log(e)}>
 
         <Header />
-        
-        <main className='mx-auto w-full'>
-          <Router>
-            <RedirectHome path="/"/>
-            <Route path="/:date" component={HomePage} />
+
+        <div className='flex flex-row  md:gap-10 md:m-10'>
+
+          <Menu />
+
+          <Router >
+            <RedirectHome path="/" />
+            <Route path="/:date" component={HomePage}  />
             <Route path="/game/:id" component={GamePage} />
             <Route path="/league/:id" component={LeaguePage} />
             <Route path="/team/:id" component={TeamPage} />
@@ -35,7 +39,8 @@ const App = () => {
             {/* <Route path="/profile/:id" component={Profile} /> */}
             <NotFound default />
           </Router>
-        </main>
+
+        </div>
 
       </ErrorBoundary>
     </LocationProvider >

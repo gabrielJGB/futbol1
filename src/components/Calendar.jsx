@@ -2,6 +2,7 @@ import { useEffect, useState } from "preact/hooks"
 import { Calendar } from "react-calendar"
 import '../../src/calendar.css'
 import { useLocation, useRoute } from "preact-iso"
+import { CalendarDays } from "lucide-preact"
 
 // import { usePathname, useRouter } from 'next/navigation'
 
@@ -15,7 +16,7 @@ const CalendarContainer = () => {
     const { params } = useRoute()
     const { route } = useLocation()
     const [date, setDate] = useState(formatDate(params.date))
-    const [showCalendar, setShowCalendar] = useState(window.innerWidth < 700?false:true)
+    const [showCalendar, setShowCalendar] = useState(window.innerWidth < 700 ? false : true)
 
     // const [locationPath, setLocationPath] = useState<any>(new Date(parseInt(pathname.slice(1, 5)), parseInt(pathname.slice(5, 7)) - 1, parseInt(pathname.slice(7, 9))))
 
@@ -38,31 +39,43 @@ const CalendarContainer = () => {
 
 
 
+    //  setShowCalendar(!showCalendar) 
 
     return (
 
-        <div className={`shadow shadow-black md:w-1/4 md:relative ${showCalendar ? "bottom-0" : "-bottom-[100%]"} transition-all fixed right-0`}>
+        <div
+            className={` md:block flex justify-between flex-col md:bg-transparent bg-[rgb(0,0,0,0.7)] h-[100vh] md:w-[30%] md:relative ${showCalendar ? "bottom-0" : "-bottom-[100%]"} transition-all fixed right-0`}
+            onClick={() => { setShowCalendar(!showCalendar) }}
+        >
 
-            <Calendar
+            <div></div>
+            <div className="z-2 " onClick={(e) => { e.stopPropagation() }}>
+                <Calendar
 
-                className="calendar"
-                locale='es-AR'
-                tileClassName="text-white"
-                value={date}
-                next2Label={null}
-                prev2Label={null}
-                onClickDay={(e) => {
-                    setShowCalendar(false)
-                    const date = `${e.getFullYear()}${String(e.getMonth() + 1).padStart(2, "0")}${String(e.getDate()).padStart(2, "0")}`
-                    setDate(date)
-                    route(`/${date}`)
-                }}
-            />
+                    className="calendar"
+                    locale='es-AR'
+                    tileClassName="text-white"
+                    value={date}
+                    next2Label={null}
+                    prev2Label={null}
+                    onClickDay={(e) => {
+                        setShowCalendar(false)
+                        const date = `${e.getFullYear()}${String(e.getMonth() + 1).padStart(2, "0")}${String(e.getDate()).padStart(2, "0")}`
+                        setDate(date)
+                        route(`/${date}`)
+                    }}
+                />
+            </div>
 
-            <button className={`shadow shadow-black md:hidden fixed bottom-1 right-1 bg-slate-900 border-[1px] border-slate-700 w-[60px] h-[60px] text-center text-lg rounded cursor-pointer`} onClick={() => { setShowCalendar(!showCalendar) }}>
-                {showCalendar ? "x" : "C"}
+
+
+            <button
+                className={`z-1 shadow flex items-center justify-center shadow-black md:hidden fixed bottom-1 right-1 bg-lime-400 border-[0px] border-slate-700 w-[60px] h-[60px] text-lg rounded-2xl cursor-pointer`}
+                onClick={() => { }}
+            >
+                <CalendarDays size={25} color="black"/>
             </button>
-        </div>
+        </div >
 
     )
 }

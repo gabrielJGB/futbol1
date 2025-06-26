@@ -40,14 +40,18 @@ const HomePage = () => {
   if (error) return <p className=''>Ha ocurrido un error</p>;
 
   return (
-    <div className='flex flex-row full gap-20 md:mt-10 mb-10 md:mx-10'>
-      
-      <Menu />
+
+    <> 
+      {/* md:mt-10 mb-10 md:mx-10 */}
+
+      {/* <Menu /> */}
+      {/* <div className='w-1/4'></div> */}
 
       <div className='md:w-1/2 w-full'>
         <DateSelector />
 
-        <div className='flex flex-col gap-10  mx-1  my-10'>
+        <div className='flex flex-col gap-10 md:mx-0 mx-1 mb-10 '>
+          {/* mx-1  my-10 */}
 
           {
             !loading ?
@@ -63,13 +67,14 @@ const HomePage = () => {
           }
 
         </div>
+
       </div>
 
       
         <CalendarContainer />
       
 
-    </div>
+    </>
   )
 }
 
