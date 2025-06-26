@@ -27,7 +27,7 @@ const Header = () => {
                 onClick={() => { showMenu.value = !showMenu.value }}
             />
 
-            <Link href="/" className="font-semibold text-lg text-white">FUTBOL 11</Link>
+            <Link href="/" className="font-semibold text-lg text-white">FUTBOL <span className='text-lime-400'>11</span></Link>
             {/* <Link href="/about">Acerca</Link>  */}
             {/* <Link href="/profile/702108">Perfil 702108</Link> */}
         </nav>

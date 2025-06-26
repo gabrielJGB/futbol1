@@ -10,7 +10,7 @@ export const useGame = (id) => {
         fetcher,
         {
             revalidateOnFocus: false,
-            refreshInterval: 60000
+            refreshInterval: 30000
         }
     );
 

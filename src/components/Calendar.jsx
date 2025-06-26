@@ -44,12 +44,12 @@ const CalendarContainer = () => {
     return (
 
         <div
-            className={` md:block flex justify-between flex-col md:bg-transparent bg-[rgb(0,0,0,0.7)] h-[100vh] md:w-[30%] md:relative ${showCalendar ? "bottom-0" : "-bottom-[100%]"} transition-all fixed right-0`}
+            className={`z-10 md:block flex justify-between flex-col md:bg-transparent bg-[rgb(0,0,0,0.7)] md:h-auto h-[100vh] md:w-full md:relative ${showCalendar ? "bottom-0" : "-bottom-[100%]"} transition-all fixed right-0`}
             onClick={() => { setShowCalendar(!showCalendar) }}
         >
 
             <div></div>
-            <div className="z-2 " onClick={(e) => { e.stopPropagation() }}>
+            <div className="z-20 " onClick={(e) => { e.stopPropagation() }}>
                 <Calendar
 
                     className="calendar"

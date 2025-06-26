@@ -1,5 +1,6 @@
 import { Link } from "preact-router";
 import { formatDate } from "../../../../utils/time";
+import { NewspaperIcon, VideoIcon } from "lucide-preact";
 
 
 
@@ -26,9 +27,9 @@ const LeagueArticles = ({ news }) => {
     const getIcon = (type) => {
 
         if (type === "dStory")
-            return <div className="text-xs font-bold">[Articulo]</div>
+            return <NewspaperIcon size={14} color={"white"} />
         else
-            return <div  className="text-xs font-bold">[Video]</div>
+            return <VideoIcon size={14} color={"white"} />
 
     }
 
@@ -41,22 +42,24 @@ const LeagueArticles = ({ news }) => {
             {
                 articles.map((article, i) => (
 
-                    <Link key={i} href={`/${article.type === "dStory" ? "article" : "video"}/${article.id}`} className='flex flex-row gap-2 px-1 py-2 cursor-pointer md:hover:bg-[--tw-color-700] active:bg-[--tw-color-700] transition-all'>
+                    <Link key={i} href={`/${article.type === "dStory" ? "article" : "video"}/${article.id}`} className='flex flex-row gap-2 px-1 py-2 cursor-pointer md:hover:bg-slate-700 active:bg-slate-700 transition-all'>
 
                         <img
                             src={article.image}
                             className='bg-cover  rounded ' alt='Imagen noticia' width={80} height={50}
                             style={{
-                                
+
                             }}
                         />
 
-                        <div className='flex flex-col gap-0'>
+                        <div className='flex flex-col '>
                             <div className='flex flex-row items-center gap-1'>
+                                <span>{getIcon(article.type)}</span>
                                 <div className='text-gray-400 text-[11px] font-bold'> {formatDate(article.published)}</div>
-                                {getIcon(article.type)}
                             </div>
-                            <div className='md:text-xs text-[11px]'>{article.headline}</div>
+
+                            <div className='md:text-xs text-[11px] flex flex-row items-center gap-1'>
+                                <span> {article.headline}</span></div>
                         </div>
 
                     </Link>

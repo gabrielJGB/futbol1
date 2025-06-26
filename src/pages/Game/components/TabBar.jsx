@@ -35,7 +35,7 @@ const TabBar = ({ tabs }) => {
 
             <button
               key={i}
-              className={`cursor-pointer max-md:flex transition-all active:bg-slate-900 hover:text-white md:px-3 px-4 md:py-3 py-4 border-b-[3px] ${selectedTab.value === i ? "border-lime-400 text-lime-400" : "border-transparent text-gray-300"} transition-all duration-200`}
+              className={`cursor-pointer max-md:flex transition-all active:bg-slate-900 hover:text-lime-400 md:px-3 px-4 md:py-3 py-4 border-b-[3px] ${selectedTab.value === i ? "border-lime-400 text-lime-400" : "border-transparent text-gray-300"} transition-all duration-200`}
               onClick={() => {
                 selectedTab.value = i
                 changeTab(i)

@@ -45,7 +45,7 @@ const Menu = () => {
             z-100
             ${menuClassName}
             ${showMenu.value ? "top-0 left-0" : "-left-[100%]"}
-            md:w-1/4 transition-all w-full bg-slate-800  opacity-100 pb-2  rounded 
+            md:w-[25%] transition-all w-full bg-slate-800  opacity-100 pb-2  rounded 
         
         `}>
 
@@ -55,7 +55,7 @@ const Menu = () => {
                         homeRoute?
                         <div></div>
                         :
-                        <Link href="/" className="font-semibold text-lg text-white">FUTBOL 11</Link>
+                        <Link href="/" className="font-semibold text-lg text-white">FUTBOL <span className='text-lime-400'>11</span></Link>
                     }
                     <ChevronLeft
                         size={37}

@@ -23,8 +23,8 @@ const GamePage = () => {
         // selectedTab.value=2
 
 
-        // if (query.tab != undefined) {
-        //     selectedTab.value = parseInt(query.tab)
+        if (query.tab != undefined) 
+            selectedTab.value = parseInt(query.tab)
         // } else {
         //     if (window.innerWidth > 768) {
         //         selectedTab.value = 1

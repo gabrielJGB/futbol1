@@ -19,7 +19,7 @@ const VideoCard = ({ video, muted, hd }) => {
     
 
     return (
-        <div className='shadow flex flex-col gap-1 shadow-gray-800  bg-slate-800 rounded-lg pt-2'>
+        <div className='shadow flex flex-col gap-1 shadow-gray-800  bg-slate-800 md:rounded-lg rounded-none pt-2'>
 
 
             {

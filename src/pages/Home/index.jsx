@@ -8,6 +8,7 @@ import CalendarContainer from '../../components/Calendar'
 import { showMenu } from '../../lib/signals'
 import Menu from '../../components/Menu'
 import { useEffect } from 'preact/hooks'
+import HomeArticles from './components/HomeArticles'
 
 
 const Loading = () => (
@@ -32,22 +33,22 @@ const HomePage = () => {
   const { leagues, loading, error } = useHome(params.date)
 
   useEffect(() => {
-        showMenu.value = false
+    showMenu.value = false
 
   }, [])
-  
+
 
   if (error) return <p className=''>Ha ocurrido un error</p>;
 
   return (
 
-    <> 
+    <>
       {/* md:mt-10 mb-10 md:mx-10 */}
 
       {/* <Menu /> */}
       {/* <div className='w-1/4'></div> */}
 
-      <div className='md:w-1/2 w-full'>
+      <div className='md:w-[60%] w-full'>
         <DateSelector />
 
         <div className='flex flex-col gap-10 md:mx-0 mx-1 mb-10 '>
@@ -70,10 +71,10 @@ const HomePage = () => {
 
       </div>
 
-      
+      <div className='relative flex flex-col md:w-[30%]'>
         <CalendarContainer />
-      
-
+        <HomeArticles />
+      </div>
     </>
   )
 }

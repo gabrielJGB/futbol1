@@ -1,4 +1,5 @@
 import { getFlag } from '@/utils/images'
+import { LucideTrophy } from 'lucide-preact'
 import { Link } from 'preact-router'
 // import { BiSolidTrophy} from 'react-icons/bi'
 
@@ -19,7 +20,7 @@ const MenuSection = ({ league }) => {
                 logo != undefined ?
                     <img src={url} width={20} height={25} />
                     :
-                    <></>
+                    <LucideTrophy size={18} color={"white"}/>
             }
             <div className='text-[13px]'>{league.name}</div>
 
