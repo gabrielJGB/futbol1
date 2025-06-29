@@ -64,7 +64,7 @@ export const getStatusText = (status, detail, date) => {
             return "Final";
 
         case "STATUS_FINAL_PEN":
-            return "Final\n(Pen.)";
+            return `Final\n (Pen.)`;
 
         case "STATUS_FINAL_AET":
             return `Final\n(Supl.)`;

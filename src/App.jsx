@@ -21,12 +21,13 @@ const App = () => {
 
         <Header />
 
-        <div className='flex flex-row  md:gap-10 md:m-10'>
+        <div className='flex flex-row  md:gap-20 md:m-10'>
 
           <Menu />
 
           <Router >
             <RedirectHome path="/" />
+            <Route path="/search/" component={SearchPage} />
             <Route path="/:date" component={HomePage}  />
             <Route path="/game/:id" component={GamePage} />
             <Route path="/league/:id" component={LeaguePage} />
@@ -34,9 +35,6 @@ const App = () => {
             <Route path="/player/:id" component={PlayerPage} />
             <Route path="/article/:id" component={ArticlePage} />
             <Route path="/video/:id" component={VideoPage} />
-            <Route path="/search" component={SearchPage} />
-
-            {/* <Route path="/profile/:id" component={Profile} /> */}
             <NotFound default />
           </Router>
 

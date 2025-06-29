@@ -12,7 +12,7 @@ const GamePage = () => {
     const { params } = useRoute()
     const id = params.id
     const { game, loading, error } = useGame(id)
-    const { query, path } = useLocation()
+    const { query, path, route } = useLocation()
 
 
     if (error) return <p className='text-center'>Ha ocurrido un error</p>;
@@ -22,9 +22,17 @@ const GamePage = () => {
 
         // selectedTab.value=2
 
+        // setTimeout(() => {
 
-        if (query.tab != undefined) 
-            selectedTab.value = parseInt(query.tab)
+        //     if (query.tab != undefined) {
+        //         route(`/game/${id}?tab=${parseInt(query.tab)}`)
+        //     }
+        //     else {
+        //         route(`/game/${id}?tab=${1}`)
+        //     }
+        // }, 400);
+
+
         // } else {
         //     if (window.innerWidth > 768) {
         //         selectedTab.value = 1
@@ -33,7 +41,14 @@ const GamePage = () => {
         //     }
         // }
 
-    }, [path])
+
+        if(query.tab === undefined && window.innerWidth < 768){
+            selectedTab.value = 0
+        }else{
+            selectedTab.value = 1
+        }
+
+    }, [])
 
 
     return (

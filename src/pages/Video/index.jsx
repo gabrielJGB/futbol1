@@ -11,7 +11,7 @@ const VideoPage = () => {
   if (loading)
     return <div className='p-2'>Cargando...</div>
 
-  if (!"videos" in data && data.videos.length > 0)
+  if (! ("videos" in data) && data.videos.length > 0)
     return <div className='p-2'>Ha ocurrido un error</div>
 
 

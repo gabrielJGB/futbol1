@@ -6,11 +6,13 @@ export const useHomeArticles = () => {
 
 
     const articles = useSWR(
-         `https://site.web.api.espn.com/apis/site/v2/sports/soccer/all/news?lang=es&region=ar&limit=21`,
+         `https://site.web.api.espn.com/apis/site/v2/sports/soccer/all/news?lang=es&region=ar&limit=30`,
         fetcher,
         {
+
+            revalidateIfStale: true,
             revalidateOnFocus: false,
-            refreshInterval: 60000
+            refreshInterval: 120000
         }
     );
 

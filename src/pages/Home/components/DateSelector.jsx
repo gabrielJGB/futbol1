@@ -9,9 +9,9 @@ const DateSelector = () => {
     const { selectedDate, previousDate, nextDate } = getDates(params.date);
 
     return (
-        <div className='flex flex-row justify-between items-center  w-full shadow-none  md:shadow  md:shadow-slate-900 bg-slate-800 text-xs text-center font-bold md:rounded mb-10 mx-auto'>
+        <div className='sticky flex flex-row justify-between items-center  w-full shadow-none  md:shadow  md:shadow-slate-900 bg-slate-800 text-xs text-center font-bold md:rounded mb-10 mx-auto'>
 
-            <Link href={`/${previousDate.string}`} className='active:text-white w-full  py-3 text-gray-400 cursor-pointer md:hover:text-white'>
+            <Link href={`/${previousDate.string}`} className='active:text-white w-full  py-3 text-gray-400 cursor-pointer md:hover:text-white md:active:bg-transparent active:bg-slate-900 '>
                 {previousDate.formated}
             </Link>
 
@@ -19,7 +19,7 @@ const DateSelector = () => {
                 {selectedDate.formated}
             </div>
 
-            <Link href={`/${nextDate.string}`} className='active:text-white w-full py-3 text-gray-400 md:hover:text-white hover:text--[--tw-primary]'>
+            <Link href={`/${nextDate.string}`} className='active:text-white w-full  py-3 text-gray-400 cursor-pointer md:hover:text-white md:active:bg-transparent active:bg-slate-900 '>
                 {nextDate.formated}
             </Link>
 

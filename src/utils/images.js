@@ -10,6 +10,13 @@ import boot from '@/assets/boot.png'
 import redCard from '@/assets/red.png'
 import yellowCard from '@/assets/yellow.png'
 
+export const getLogoURL = (logoFull, size ) => {
+
+
+    const logo = `${logoFull.replace("https://a.espncdn.com/", "https://a1.espncdn.com/combiner/i?img=")}?h=${size}&w=${size}`
+    return logo
+
+}
 
 
 export const getFlag = (slug, SIZE) => {

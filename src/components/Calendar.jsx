@@ -44,7 +44,7 @@ const CalendarContainer = () => {
     return (
 
         <div
-            className={`z-10 md:block flex justify-between flex-col md:bg-transparent bg-[rgb(0,0,0,0.7)] md:h-auto h-[100vh] md:w-full md:relative ${showCalendar ? "bottom-0" : "-bottom-[100%]"} transition-all fixed right-0`}
+            className={`z-10 flex justify-between flex-col md:bg-transparent bg-[rgb(0,0,0,0.7)] md:h-auto h-[100vh] md:w-full fixed md:relative ${showCalendar ? "bottom-0" : "-bottom-[150%]"} transition-all  right-0`}
             onClick={() => { setShowCalendar(!showCalendar) }}
         >
 
@@ -59,7 +59,7 @@ const CalendarContainer = () => {
                     next2Label={null}
                     prev2Label={null}
                     onClickDay={(e) => {
-                        setShowCalendar(false)
+                        setShowCalendar(window.innerWidth > 768 ? true : false)
                         const date = `${e.getFullYear()}${String(e.getMonth() + 1).padStart(2, "0")}${String(e.getDate()).padStart(2, "0")}`
                         setDate(date)
                         route(`/${date}`)
@@ -73,7 +73,7 @@ const CalendarContainer = () => {
                 className={`z-1 shadow flex items-center justify-center shadow-black md:hidden fixed bottom-1 right-1 bg-lime-400 border-[0px] border-slate-700 w-[60px] h-[60px] text-lg rounded-2xl cursor-pointer`}
                 onClick={() => { }}
             >
-                <CalendarDays size={25} color="black"/>
+                <CalendarDays size={25} color="black" />
             </button>
         </div >
 

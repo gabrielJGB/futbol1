@@ -112,9 +112,9 @@ const Field = ({ game, homeLogo, awayLogo, homeFormation, awayFormation, invertF
         >
 
             <button
-                className='absolute left-[47%] p-1 bg-[rgb(0,0,0,0.15)] active:bg-gray-900 md:hover:bg-[rgb(0,0,0,0.6)] text-gray-400 md:hover:text-gray-300 transition-all font-bold rounded text-center px-3 mt-1 mb-2 mx-auto border-gray-600 border-[1px]'
+                className='absolute left-[47%] p-1 bg-[rgb(0,0,0,0.15)] active:bg-gray-900 md:hover:bg-[rgb(0,0,0,0.6)] text-gray-400 md:hover:text-gray-300 transition-all font-bold rounded text-center px-3 mt-1 mb-2 mx-auto border-gray-600 border-[1px] cursor-pointer'
                 onClick={() => setInvertField(!invertField)}
-            > {"<->"}
+            > {"< >"}
             </button>
 
             {

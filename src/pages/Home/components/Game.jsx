@@ -16,7 +16,7 @@ const Game = ({ game }) => {
     return (
         <Link
             href={`/game/${id}`}
-            className={`bg-slate-800 border-[1px] border-slate-600 hover:border-lime-500 transition-all text-white flex-col gap-[1px]`}
+            className={`bg-slate-800 border-[1px] border-slate-600 active:border-lime-500 hover:border-lime-500 transition-all text-white flex-col gap-[1px]`}
         >
 
             <div className='grid grid-cols-8 gap-[1px] rounded-r-lg'>

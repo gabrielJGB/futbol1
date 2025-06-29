@@ -46,7 +46,7 @@ const Menu = () => {
             ${menuClassName}
             ${showMenu.value ? "top-0 left-0" : "-left-[100%]"}
             md:w-[25%] transition-all w-full bg-slate-800  opacity-100 pb-2  rounded 
-        
+            md:self-start
         `}>
 
             <div className='flex flex-col '>

@@ -15,7 +15,7 @@ const Events = ({ events, teams }) => {
 
 
     return (
-        <div className='flex flex-col-reverse gap-4'>
+        <div className='flex flex-col-reverse gap-3'>
             {
                 events.map((event, i) => {
                     const isFoul = event.play && "type" in event.play && "id" in event.play.type && event.play.type.id === '66' || event.play && "type" in event.play && "id" in event.play.type && event.play.type.id === '36'

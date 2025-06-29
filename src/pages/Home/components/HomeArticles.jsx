@@ -12,7 +12,10 @@ const HomeArticles = () => {
     if (loading)
         return <div></div>
 
-    const articles = data.articles
+    const articles = data.articles.filter(x=>x.categories[0].description != "Copa Oro" && !x.categories[0].description.includes("CONCACAF")&& !x.categories[0].description.includes("Central American") )
+
+    
+    
 
     const getIcon = (type) => {
 
@@ -26,13 +29,13 @@ const HomeArticles = () => {
 
 
     return (
-        <div className={`md:overflow-hidden overflow-y-scroll z-1 md:block flex justify-between flex-col md:p-0 p-2 md:bg-transparent bg-[rgb(0,0,0,0.9)] md:h-auto h-[100vh] md:w-full md:relative ${showArticles ? "bottom-0" : "-bottom-[100%]"} transition-all fixed right-0`}
+        <div className={`md:overflow-hidden overflow-y-scroll z-1 md:block flex justify-between flex-col md:p-0 p-2 md:bg-transparent bg-[rgb(0,0,0,0.9)] md:h-auto h-[100vh] md:w-full md:relative ${showArticles ? "bottom-0" : "-bottom-[150%]"} transition-all fixed right-0 pb-30`}
         >
             <h2 className='font-semibold text-[22px] my-2'>Ultimas noticias</h2>
             <div className='flex flex-col gap-1'>
 
                 {
-                    articles?.map((article, i) => (
+                    articles.filter(x=>x.categories[0].description != "Copa ORO").map((article, i) => (
 
                         <Link key={i} href={`/${article.type === "dStory" ? "article" : "video"}/${article.id}`} className='flex flex-row items-start gap-2 p-2 cursor-pointer bg-slate-800 md:hover:bg-slate-700 active:bg-slate-700 rounded transition-all'>
 

@@ -12,7 +12,7 @@ const KeyEvents = ({ keyEvents,teams }) => {
     
 
     return (
-        <div className='flex flex-col-reverse gap-4'>
+        <div className='flex flex-col-reverse gap-3'>
             {
                 keyEvents.map((event, i) => (
                     <Event

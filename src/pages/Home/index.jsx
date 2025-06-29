@@ -40,6 +40,9 @@ const HomePage = () => {
 
   if (error) return <p className=''>Ha ocurrido un error</p>;
 
+  // leagues.scores.reduce((acc, item) => acc + item.events.length, 0);
+  // leagues.length
+
   return (
 
     <>
@@ -48,11 +51,13 @@ const HomePage = () => {
       {/* <Menu /> */}
       {/* <div className='w-1/4'></div> */}
 
-      <div className='md:w-[60%] w-full'>
+      <div className='md:w-[50%] w-full'>
         <DateSelector />
 
         <div className='flex flex-col gap-10 md:mx-0 mx-1 mb-10 '>
           {/* mx-1  my-10 */}
+
+          
 
           {
             !loading ?
@@ -65,6 +70,11 @@ const HomePage = () => {
               ))
               :
               <Loading />
+          }
+
+          {
+            !loading && leagues.length === 0 &&
+            <div className='text-center w-full p-2 text-gray-300'>Sin partidos</div>
           }
 
         </div>

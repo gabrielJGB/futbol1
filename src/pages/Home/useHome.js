@@ -9,7 +9,9 @@ export const useHome = (date) => {
             : null,
         fetcher,
         {
+            revalidateIfStale: true,
             revalidateOnFocus: false,
+            
             refreshInterval: 30000
         }
     );

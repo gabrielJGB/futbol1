@@ -20,11 +20,11 @@ const PrevTab = ({ game }) => {
 
 
   return (
-    <div className='flex flex-col gap-4'>
+    <div className='flex flex-col gap-4 mx-1'>
 
-      <div className='flex flex-col'>
+      <div className='flex flex-col '>
         <h2 className='p-2 text-center text-xl font-bold'>Partidos previos</h2>
-        <div className='grid grid-cols-2 gap-x-6 md:gap-y-2 gap-y-6 md:px-0 px-1 pt-1'>
+        <div className='grid grid-cols-2 gap-x-6 md:gap-y-2 gap-y-6 md:px-0 px-0 pt-1'>
 
           {
             [home, away].map((team, i) => (
@@ -40,7 +40,7 @@ const PrevTab = ({ game }) => {
                   </h2>
                 </div>
 
-                <div key={i} className='flex flex-col gap-2 md:col-span-1 col-span-2 p-2 rounded-lg pb-2'>
+                <div key={i} className='flex flex-col gap-2 md:col-span-1 col-span-2  rounded-lg pb-2'>
 
                   {
                     team.events.map((event, j) => (
@@ -78,7 +78,7 @@ const PrevTab = ({ game }) => {
 
             <h2 className='p-2 text-center text-xl font-bold'>Últimos enfrentamientos</h2>
 
-            <div className='flex flex-col gap-2  mx-1 p-2  rounded-lg'>
+            <div className='flex flex-col gap-2   rounded-lg'>
               {
 
                 headToHeadGames.events.map((event, j) => (
