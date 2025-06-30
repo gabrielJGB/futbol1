@@ -54,10 +54,8 @@ const HomePage = () => {
       <div className='md:w-[50%] w-full'>
         <DateSelector />
 
-        <div className='flex flex-col gap-10 md:mx-0 mx-1 mb-10 '>
-          {/* mx-1  my-10 */}
+        <div className='flex flex-col md:gap-10 gap-7 md:mx-0 mx-1 mb-10 '>
 
-          
 
           {
             !loading ?

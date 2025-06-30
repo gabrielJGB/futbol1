@@ -11,12 +11,16 @@
                 "slug": "arg.2"
             },
             {
-                "name": "Libertadores",
-                "slug": "conmebol.libertadores"
-            },
-            {
                 "name": "Copa Argentina",
                 "slug": "arg.copa"
+            },
+	    {
+                "name": "Mundial de Clubes",
+                "slug": "fifa.cwc"
+            },
+            {
+                "name": "Libertadores",
+                "slug": "conmebol.libertadores"
             },
             {
                 "name": "Champions League",

@@ -21,7 +21,7 @@ const App = () => {
 
         <Header />
 
-        <div className='flex flex-row  md:gap-20 md:m-10'>
+        <div className='flex flex-row  md:gap-20  md:mb-10 md:mt-5 md:mx-10'>
 
           <Menu />
 
